@@ -23,6 +23,7 @@ import {
   homeSectors,
   homeVisitChecks,
 } from "@/content/home";
+import { ApiError, listDestacados, type EquipoListItem } from "@/lib/api";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -54,7 +55,25 @@ const jsonLd = {
     "Venta, instalación, mantenimiento y reparación de aire acondicionado y refrigeración comercial e industrial.",
 };
 
-export default function Home() {
+async function loadFeatured(): Promise<{
+  equipos: EquipoListItem[];
+  error?: string;
+}> {
+  try {
+    const equipos = await listDestacados();
+    return { equipos };
+  } catch (error) {
+    const message =
+      error instanceof ApiError
+        ? error.message
+        : "No pudimos cargar los equipos destacados.";
+    return { equipos: [], error: message };
+  }
+}
+
+export default async function Home() {
+  const featured = await loadFeatured();
+
   return (
     <main>
       <script
@@ -146,7 +165,7 @@ export default function Home() {
       </section>
 
       <CapacityCalculatorPlaceholder />
-      <FeaturedEquipment />
+      <FeaturedEquipment equipos={featured.equipos} error={featured.error} />
 
       <section
         id="proceso"

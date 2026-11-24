@@ -6,6 +6,9 @@ from sqlalchemy import engine_from_config, pool
 from app.core.config import settings
 from app.core.db import Base
 
+# Import domain models so Base.metadata includes their tables for autogenerate.
+from app.catalogo import models as catalogo_models  # noqa: F401
+
 config = context.config
 config.set_main_option("sqlalchemy.url", settings.database_url)
 

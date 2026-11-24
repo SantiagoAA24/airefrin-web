@@ -1,0 +1,533 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Airefrin API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "health"
+        ],
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object",
+                  "title": "Response Health Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/catalogo/equipos": {
+      "get": {
+        "tags": [
+          "catalogo"
+        ],
+        "summary": "Listar equipos publicados",
+        "operationId": "list_equipos_catalogo_equipos_get",
+        "parameters": [
+          {
+            "name": "marca",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Slug de la marca",
+              "title": "Marca"
+            },
+            "description": "Slug de la marca"
+          },
+          {
+            "name": "tipo",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Slug de la categoría / tipo",
+              "title": "Tipo"
+            },
+            "description": "Slug de la categoría / tipo"
+          },
+          {
+            "name": "btu_min",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Capacidad mínima en BTU",
+              "title": "Btu Min"
+            },
+            "description": "Capacidad mínima en BTU"
+          },
+          {
+            "name": "btu_max",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Capacidad máxima en BTU",
+              "title": "Btu Max"
+            },
+            "description": "Capacidad máxima en BTU"
+          },
+          {
+            "name": "destacado",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Solo equipos destacados",
+              "title": "Destacado"
+            },
+            "description": "Solo equipos destacados"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1,
+              "title": "Page"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 50,
+              "minimum": 1,
+              "default": 12,
+              "title": "Page Size"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EquipoListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/catalogo/equipos/{slug}": {
+      "get": {
+        "tags": [
+          "catalogo"
+        ],
+        "summary": "Obtener ficha de un equipo por slug",
+        "operationId": "get_equipo_catalogo_equipos__slug__get",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EquipoDetalle"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/catalogo/marcas": {
+      "get": {
+        "tags": [
+          "catalogo"
+        ],
+        "summary": "Listar marcas con equipos publicados",
+        "operationId": "list_marcas_catalogo_marcas_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/MarcaOut"
+                  },
+                  "type": "array",
+                  "title": "Response List Marcas Catalogo Marcas Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CategoriaOut": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "nombre": {
+            "type": "string",
+            "title": "Nombre"
+          },
+          "slug": {
+            "type": "string",
+            "title": "Slug"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "nombre",
+          "slug"
+        ],
+        "title": "CategoriaOut"
+      },
+      "EquipoDetalle": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "nombre": {
+            "type": "string",
+            "title": "Nombre"
+          },
+          "slug": {
+            "type": "string",
+            "title": "Slug"
+          },
+          "marca": {
+            "$ref": "#/components/schemas/MarcaOut"
+          },
+          "categoria": {
+            "$ref": "#/components/schemas/CategoriaOut"
+          },
+          "capacidad_btu": {
+            "type": "integer",
+            "title": "Capacidad Btu"
+          },
+          "tipo": {
+            "type": "string",
+            "title": "Tipo"
+          },
+          "tecnologia": {
+            "type": "string",
+            "title": "Tecnologia"
+          },
+          "referencia": {
+            "type": "string",
+            "title": "Referencia"
+          },
+          "descripcion": {
+            "type": "string",
+            "title": "Descripcion"
+          },
+          "imagenes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Imagenes"
+          },
+          "destacado": {
+            "type": "boolean",
+            "title": "Destacado"
+          },
+          "relacionados": {
+            "items": {
+              "$ref": "#/components/schemas/EquipoListItem"
+            },
+            "type": "array",
+            "title": "Relacionados"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "nombre",
+          "slug",
+          "marca",
+          "categoria",
+          "capacidad_btu",
+          "tipo",
+          "tecnologia",
+          "referencia",
+          "descripcion",
+          "imagenes",
+          "destacado"
+        ],
+        "title": "EquipoDetalle"
+      },
+      "EquipoListItem": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "nombre": {
+            "type": "string",
+            "title": "Nombre"
+          },
+          "slug": {
+            "type": "string",
+            "title": "Slug"
+          },
+          "marca": {
+            "$ref": "#/components/schemas/MarcaOut"
+          },
+          "categoria": {
+            "$ref": "#/components/schemas/CategoriaOut"
+          },
+          "capacidad_btu": {
+            "type": "integer",
+            "title": "Capacidad Btu"
+          },
+          "tipo": {
+            "type": "string",
+            "title": "Tipo"
+          },
+          "tecnologia": {
+            "type": "string",
+            "title": "Tecnologia"
+          },
+          "referencia": {
+            "type": "string",
+            "title": "Referencia"
+          },
+          "descripcion": {
+            "type": "string",
+            "title": "Descripcion"
+          },
+          "imagenes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Imagenes"
+          },
+          "destacado": {
+            "type": "boolean",
+            "title": "Destacado"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "nombre",
+          "slug",
+          "marca",
+          "categoria",
+          "capacidad_btu",
+          "tipo",
+          "tecnologia",
+          "referencia",
+          "descripcion",
+          "imagenes",
+          "destacado"
+        ],
+        "title": "EquipoListItem"
+      },
+      "EquipoListResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/EquipoListItem"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "page": {
+            "type": "integer",
+            "title": "Page"
+          },
+          "page_size": {
+            "type": "integer",
+            "title": "Page Size"
+          },
+          "pages": {
+            "type": "integer",
+            "title": "Pages"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "page",
+          "page_size",
+          "pages"
+        ],
+        "title": "EquipoListResponse"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "MarcaOut": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "nombre": {
+            "type": "string",
+            "title": "Nombre"
+          },
+          "slug": {
+            "type": "string",
+            "title": "Slug"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "nombre",
+          "slug"
+        ],
+        "title": "MarcaOut"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
