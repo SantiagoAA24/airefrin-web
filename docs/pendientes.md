@@ -2,8 +2,18 @@
 
 Marcadores visibles en el sitio que hay que confirmar con el cliente.
 
-- [ ] Texto y enlace de la política de tratamiento de datos (Ley 1581 de 2012) — el aviso de cookies y los formularios apuntan a `[Política de datos]`.
-- [ ] Términos y condiciones.
+- [ ] Texto y enlace de la política de tratamiento de datos (Ley 1581 de 2012) — el aviso de cookies y los formularios apuntan a `[Política de datos]` / `[ENLACE A POLÍTICA DE DATOS]`.
+- [ ] Términos y condiciones — `[ENLACE A TÉRMINOS]`.
 - [ ] Archivo oficial del logo y versión sobre fondo oscuro.
 - [ ] Horario de atención y dirección de la oficina.
-- [ ] Fotos reales (hero, sectores, técnicos, equipos).
+- [ ] Fotos reales (hero, sectores, técnicos, equipos, equipo de Airefrin).
+- [ ] Ilustración / foto del hero de inicio — `[Ilustración provisional · se reemplaza por foto real de una instalación]`.
+- [ ] Fotos de sectores — `[Las tarjetas de sector se reemplazan por fotos reales de proyectos]`.
+- [ ] Fotos de producto por referencia del catálogo.
+- [ ] Foto del técnico en instalación — sección «Cómo trabajamos».
+- [ ] Foto del equipo de Airefrin — página Empresa.
+- [ ] Historia de la empresa (quiénes somos) — texto pendiente del cliente.
+- [ ] Logos oficiales de las 8 marcas aliadas.
+- [ ] Mapa de cobertura (Bogotá, Cundinamarca y Meta).
+- [ ] Validación de la regla de la calculadora de BTU (600 BTU/m² + 15 % con mucho sol) — hoy es componente provisional.
+- [ ] Tuteo o usted en todo el sitio.

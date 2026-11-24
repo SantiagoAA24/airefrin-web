@@ -18,6 +18,8 @@ export interface ButtonProps
   variant?: ButtonVariant;
   size?: ButtonSize;
   href?: string;
+  target?: string;
+  rel?: string;
   arrow?: boolean;
   icon?: IconName;
   children: ReactNode;
@@ -40,6 +42,8 @@ export function Button({
   variant = "primary",
   size = "md",
   href,
+  target,
+  rel,
   arrow,
   icon,
   children,
@@ -65,7 +69,7 @@ export function Button({
 
   if (href && !disabled) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} className={classes} target={target} rel={rel}>
         {content}
       </a>
     );
