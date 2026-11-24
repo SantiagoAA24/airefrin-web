@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,800&display=swap");
+.afr-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 16px/1 var(--font-sans);padding:17px 30px;border-radius:var(--radius-pill);border:2px solid transparent;cursor:pointer;text-decoration:none;box-sizing:border-box}
+.afr-btn:focus-visible,.afr-chip:focus-visible,.afr-faq__q:focus-visible,.afr-field:focus-visible{outline:3px solid var(--cyan-400);outline-offset:3px}
+.afr-btn--sm{padding:13px 24px;font-size:15px}
+.afr-btn--primary{background:var(--gradient-cta);color:var(--white);box-shadow:var(--shadow-button)}
+.afr-btn--outline{background:transparent;color:var(--blue-600);border-color:var(--blue-600)}
+.afr-btn--outline-light{background:rgba(4,19,55,.35);color:var(--white);border-color:var(--cyan-400)}
+.afr-btn--whatsapp{background:var(--green-700);color:var(--white)}
+.afr-btn--accent{background:var(--orange-500);color:var(--navy-950)}
+.afr-chip{font:700 15px/1 var(--font-sans);height:46px;min-width:64px;padding:0 20px;border-radius:var(--radius-pill);border:2px solid var(--border-control);background:var(--white);color:var(--navy-800);cursor:pointer}
+.afr-chip[aria-pressed="true"]{background:var(--blue-600);border-color:var(--blue-600);color:var(--white)}
+.afr-badge{display:inline-block;font:800 12px/1 var(--font-sans);letter-spacing:.05em;padding:6px 11px;border-radius:var(--radius-pill);background:var(--orange-500);color:var(--navy-950);text-transform:uppercase}
+.afr-badge--ok{background:var(--green-100);color:var(--green-700)}
+.afr-eyebrow{display:flex;align-items:center;gap:10px;font:800 15px/1.2 var(--font-sans);letter-spacing:.04em;text-transform:uppercase;color:var(--blue-600);margin:0}
+.afr-eyebrow::before{content:"";width:20px;height:3px;background:currentColor;display:inline-block}
+.afr-eyebrow--dark{color:var(--cyan-300)}
+.afr-pillar{display:flex;gap:16px;align-items:center;font-family:var(--font-sans)}
+.afr-pillar__icon{flex:0 0 52px;display:flex;align-items:center;justify-content:center;color:var(--blue-600)}
+.afr-pillar__t{font:700 19px/1.3 var(--font-sans);color:var(--ink)}
+.afr-pillar__d{margin-top:4px;font:500 15px/1.45 var(--font-sans);color:var(--text)}
+.afr-stat{display:flex;gap:16px;align-items:center;font-family:var(--font-sans);color:var(--cyan-400)}
+.afr-stat__n{font:800 34px/1 var(--font-sans);color:var(--cyan-400)}
+.afr-stat__t{margin-top:6px;font:500 15px/1.35 var(--font-sans);color:var(--on-dark)}
+.afr-sector{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:270px;padding:20px;box-sizing:border-box;border-radius:var(--radius-md);box-shadow:var(--shadow-card);color:var(--white);font-family:var(--font-sans);text-decoration:none}
+.afr-sector__ghost{position:absolute;top:34px;left:50%;margin-left:-60px;color:rgba(255,255,255,.22)}
+.afr-sector__label{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;font:700 18px/1.2 var(--font-sans)}
+.afr-eq{display:flex;flex-direction:column;gap:10px;border:1.5px solid var(--line);border-radius:var(--radius-md);padding:22px;background:var(--white);box-sizing:border-box;font-family:var(--font-sans)}
+.afr-eq__img{height:120px;border-radius:12px;background:var(--sky-50);display:flex;align-items:center;justify-content:center;color:var(--text-muted)}
+.afr-eq__brand{font:800 13px/1.2 var(--font-sans);letter-spacing:.05em;text-transform:uppercase;color:var(--blue-600)}
+.afr-eq__name{font:700 19px/1.3 var(--font-sans);color:var(--navy-800)}
+.afr-eq__spec{font:500 14px/1.5 var(--font-sans);color:var(--text)}
+.afr-field{width:100%;box-sizing:border-box;height:52px;border:0;border-radius:var(--radius-sm);padding:0 16px;font:500 16px/1 var(--font-sans);background:var(--white);color:var(--ink)}
+.afr-field--light{border:2px solid var(--border-control)}
+.afr-faq{background:var(--white);border:1.5px solid var(--line);border-radius:var(--radius-md);font-family:var(--font-sans)}
+.afr-faq__q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;background:none;border:0;padding:20px 24px;cursor:pointer;font:700 17px/1.4 var(--font-sans);color:var(--navy-800)}
+.afr-faq__sign{font-size:24px;color:var(--blue-600)}
+.afr-faq__a{padding:0 24px 22px;font:500 16px/1.6 var(--font-sans);color:var(--text)}
+.afr-step{display:flex;flex-direction:column;align-items:center;gap:10px;font-family:var(--font-sans);color:var(--white)}
+.afr-step__c{width:64px;height:64px;border-radius:50%;background:var(--white);box-shadow:0 0 0 4px rgba(56,192,245,.5);display:flex;align-items:center;justify-content:center;color:var(--blue-600)}
+.afr-step__t{font:700 16px/1.2 var(--font-sans);text-align:center}

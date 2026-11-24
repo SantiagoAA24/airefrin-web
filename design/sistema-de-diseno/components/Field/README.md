@@ -1,0 +1,3 @@
+Campo de texto o lista desplegable de 52px de alto. Sobre navy: fondo blanco, sin borde y `radius-sm`. Sobre fondo claro (`onLight`): borde de 2px `border-control`.
+
+La etiqueta existe siempre (oculta visualmente si el campo lleva marcador); no se sustituye una etiqueta por el marcador. Campos del formulario de cotización: Nombre, Teléfono o WhatsApp y ¿Qué necesitas? (Mantenimiento, Reparación, Instalación, Compra de equipo, Refrigeración / cuarto frío). Bajo el formulario va el aviso de tratamiento de datos con enlace a la política.

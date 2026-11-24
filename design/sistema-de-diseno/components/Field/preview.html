@@ -1,0 +1,7 @@
+<!-- @dsCard group="Formularios" height=260 -->
+<div id="root" style="padding:28px;background:var(--navy-900);min-height:100%;box-sizing:border-box"></div>
+<script>
+var A = window.Airefrin, h = React.createElement;
+function Demo(){ return h('div',{style:{display:'flex',flexDirection:'column',gap:12,maxWidth:420}},h(A.Field,{id:'n',placeholder:'Nombre'}),h(A.Field,{id:'t',placeholder:'Teléfono o WhatsApp',type:'tel'}),h(A.Field,{id:'s',placeholder:'¿Qué necesitas?',options:['Mantenimiento','Reparación','Instalación','Compra de equipo']})); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>

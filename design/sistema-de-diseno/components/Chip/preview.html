@@ -1,0 +1,8 @@
+<!-- @dsCard group="Acciones" height=130 -->
+<div id="root" style="padding:28px;background:var(--white);min-height:100%;box-sizing:border-box"></div>
+<script>
+var A = window.Airefrin, h = React.createElement;
+function Demo(){ var s=React.useState(1), on=s[0], set=s[1]; var a=['15','25','40','60','100'];
+return h('div',null,h('div',{style:{font:'700 14px var(--font-sans)',color:'var(--text)',marginBottom:10}},'Área del espacio (m²)'),h('div',{style:{display:'flex',gap:10,flexWrap:'wrap'}},a.map(function(x,i){return h(A.Chip,{key:x,pressed:on===i,onClick:function(){set(i)}},x);}))); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>

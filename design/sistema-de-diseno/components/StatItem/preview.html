@@ -1,0 +1,7 @@
+<!-- @dsCard group="Tarjetas" height=150 -->
+<div id="root" style="padding:28px;background:var(--navy-900);min-height:100%;box-sizing:border-box"></div>
+<script>
+var A = window.Airefrin, h = React.createElement;
+function Demo(){ return h('div',{style:{display:'flex',flexWrap:'wrap',gap:24}},[['cal','2012','Año de fundación'],['shield','3 meses','Mantenimiento recomendado'],['hand','8','Marcas aliadas']].map(function(x){return h('div',{key:x[1],style:{flex:'1 1 220px'}},h(A.StatItem,{icon:x[0],value:x[1],label:x[2]}));})); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>

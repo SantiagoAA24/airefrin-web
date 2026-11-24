@@ -1,0 +1,8 @@
+<!-- @dsCard group="Formularios" height=230 -->
+<div id="root" style="padding:28px;background:var(--sky-50);min-height:100%;box-sizing:border-box"></div>
+<script>
+var A = window.Airefrin, h = React.createElement;
+function Demo(){ var s=React.useState(0), o=s[0], set=s[1]; var q=[['¿Cada cuánto debo hacer mantenimiento?','Recomendamos un mantenimiento preventivo como máximo cada 3 meses.'],['¿En qué zonas atienden?','En Bogotá, Cundinamarca y Meta.']];
+return h('div',{style:{display:'flex',flexDirection:'column',gap:12,maxWidth:620}},q.map(function(x,i){return h(A.FaqItem,{key:i,question:x[0],open:o===i,onToggle:function(){set(o===i?-1:i)}},x[1]);})); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>

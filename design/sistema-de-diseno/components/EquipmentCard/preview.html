@@ -1,0 +1,7 @@
+<!-- @dsCard group="Tarjetas" height=360 -->
+<div id="root" style="padding:28px;background:var(--white);min-height:100%;box-sizing:border-box"></div>
+<script>
+var A = window.Airefrin, h = React.createElement;
+function Demo(){ return h('div',{style:{display:'flex',flexWrap:'wrap',gap:20}},[['Confortfresh','Minisplit Inverter','24.000','INMS'],['LG','Cassette Techo','54.000','ATNQ54GMLE3'],['Samsung','Mini Split Pared','18.000','AR18KVSPDGM/CB']].map(function(x){return h('div',{key:x[3],style:{flex:'1 1 220px'}},h(A.EquipmentCard,{brand:x[0],name:x[1],btu:x[2],model:x[3]}));})); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>

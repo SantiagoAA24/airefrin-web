@@ -1,0 +1,7 @@
+<!-- @dsCard group="Tarjetas" height=330 -->
+<div id="root" style="padding:28px;background:var(--white);min-height:100%;box-sizing:border-box"></div>
+<script>
+var A = window.Airefrin, h = React.createElement;
+function Demo(){ return h('div',{style:{display:'flex',flexWrap:'wrap',gap:18}},[['home','Residencial','#5e8fd6','#16396f'],['shop','Comercial','#3e78d0','#0f2e69'],['fact','Industrial','#6b7f9e','#1b2a44'],['snow','Cuartos fríos','#7db7e3','#1e4f86']].map(function(x){return h('div',{key:x[1],style:{flex:'1 1 180px'}},h(A.SectorCard,{icon:x[0],label:x[1],from:x[2],to:x[3]}));})); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(Demo));
+</script>

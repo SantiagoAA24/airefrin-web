@@ -1,0 +1,11 @@
+---
+description: Convenciones del frontend Next.js
+globs: web/**
+alwaysApply: false
+---
+- Server Components por defecto; usa "use client" solo donde haya interactividad.
+- Metadatos, Open Graph y JSON-LD (LocalBusiness, Service, Product) en cada página pública.
+- Imágenes con next/image; sin imágenes de bancos externos que no tengan licencia.
+- Acceso a datos solo a través de un cliente tipado en web/src/lib/api; nada de fetch suelto en componentes.
+- Formularios con validación en cliente y en servidor, mensajes claros en español.
+- Cada pantalla se compara contra su boceto en design/pantallas antes de darla por terminada.

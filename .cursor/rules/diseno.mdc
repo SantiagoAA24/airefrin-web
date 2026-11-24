@@ -1,0 +1,9 @@
+---
+description: Reglas visuales del sistema de diseño de Airefrin
+globs: web/**/*.{ts,tsx,css}
+alwaysApply: false
+---
+- Los colores, la tipografía (Montserrat), espaciados, radios, sombras y degradados salen de design/sistema-de-diseno/tokens.json, convertidos a variables CSS y a la configuración de Tailwind. No uses valores hexadecimales sueltos en componentes.
+- Botones en forma de píldora. El naranja siempre lleva texto azul marino. El cian del logo (#00ADDC) solo se usa en el logo.
+- Cada componente de design/sistema-de-diseno/components/ tiene su equivalente React en web/src/components/ui con las mismas variantes; lée el README de cada uno antes de recrearlo.
+- Respeta el contraste AA del sistema de diseño.

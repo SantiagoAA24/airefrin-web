@@ -1,0 +1,1 @@
+Paso del proceso sobre `gradient-process`: círculo blanco de 64px con anillo `cyan-400` al 50%, icono de 30px en `blue-600` y etiqueta de una palabra: Cotiza, Agendamos, Ejecutamos, Confirmamos. Entre pasos va una flecha `cyan-300`; en móvil se apilan en dos columnas sin flechas.

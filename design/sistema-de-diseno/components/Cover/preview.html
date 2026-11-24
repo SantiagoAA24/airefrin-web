@@ -1,0 +1,36 @@
+<!-- @dsCard height=300 -->
+<style>
+.cv{position:relative;width:960px;height:300px;background:var(--white);overflow:hidden;font-family:var(--font-sans)}
+.cv svg{position:absolute;left:0;top:0}
+.cv .navy{fill:var(--navy-800);rx:var(--radius-lg)}
+.cv .blue{fill:var(--blue-600);rx:var(--radius-lg)}
+.cv .cyan{fill:var(--cyan-400);rx:var(--radius-lg)}
+.cv .tint{fill:var(--line);rx:var(--radius-lg)}
+.cv .orange{fill:var(--orange-500);rx:26px}
+.cv .louver{fill:var(--cyan-400);rx:10px}
+.cv .louver-w{fill:var(--white);rx:10px}
+.cv .name{position:absolute;left:32px;top:152px;margin:0;font-weight:800;font-size:84px;line-height:.95;color:var(--navy-800);letter-spacing:-.01em}
+.cv .tag{position:absolute;left:34px;top:250px;margin:0;font-weight:600;font-size:14px;line-height:1.3;color:var(--text-muted);width:420px}
+</style>
+<div class="cv">
+<svg width="960" height="300" viewBox="0 0 960 300" aria-hidden="true">
+<!-- Derivación
+ Bloques: navy-800 (losa 200x220), blue-600 (220x120), cyan-400 (108x124), line (104x124), orange-500 (80x52); esquinas radius-lg y pill.
+ Disposición: una losa alta a la izquierda y dos bloques escalonados a la derecha, que sangran por arriba y por abajo.
+ Patrón: filas de píldoras como las lamas de una unidad de aire; el logo y el producto son flujo de aire, y el sistema usa radios grandes (radius-pill, radius-lg).
+ Pasos y radios: 16, 24, 32 en espaciados internos; 22px y 26px en esquinas, 10px en lamas. -->
+<rect class="navy" x="500" y="-30" width="200" height="250"/>
+<rect class="blue" x="716" y="24" width="220" height="120"/>
+<rect class="cyan" x="716" y="152" width="108" height="170"/>
+<rect class="tint" x="832" y="152" width="104" height="170"/>
+<rect class="orange" x="500" y="232" width="80" height="52"/>
+<rect class="louver" x="524" y="40" width="152" height="20"/>
+<rect class="louver" x="524" y="76" width="128" height="20"/>
+<rect class="louver" x="524" y="112" width="104" height="20"/>
+<rect class="louver" x="524" y="148" width="80" height="20"/>
+<rect class="louver-w" x="740" y="52" width="140" height="20"/>
+<rect class="louver-w" x="740" y="88" width="104" height="20"/>
+</svg>
+<h1 class="name">Airefrin</h1>
+<p class="tag">Aire acondicionado y refrigeración comercial e industrial.</p>
+</div>

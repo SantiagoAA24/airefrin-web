@@ -1,0 +1,11 @@
+---
+description: Convenciones del backend FastAPI
+globs: api/**
+alwaysApply: false
+---
+- Una carpeta por dominio (catalogo, solicitudes, agenda, clientes, fichas) con router, esquemas, servicio y modelos.
+- Cambios de base de datos solo con migraciones de Alembic; nunca edites tablas a mano.
+- Validación con Pydantic; errores con códigos HTTP correctos y mensajes en español.
+- Cada endpoint nuevo lleva al menos una prueba con pytest.
+- Autenticación y roles (cliente, técnico, administrador) en una sola dependencia reutilizable.
+- Las rutas de administración y portal exigen sesión; los endpoints públicos tienen límite de tasa y honeypot anti-spam.
