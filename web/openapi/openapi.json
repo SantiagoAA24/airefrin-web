@@ -244,6 +244,47 @@
           }
         }
       }
+    },
+    "/solicitudes/contacto": {
+      "post": {
+        "tags": [
+          "solicitudes"
+        ],
+        "summary": "Registrar solicitud de contacto",
+        "operationId": "crear_contacto_solicitudes_contacto_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactoCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContactoResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -270,6 +311,92 @@
           "slug"
         ],
         "title": "CategoriaOut"
+      },
+      "ContactoCreate": {
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 2,
+            "title": "Nombre"
+          },
+          "telefono": {
+            "type": "string",
+            "maxLength": 40,
+            "minLength": 7,
+            "title": "Telefono"
+          },
+          "correo": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 254
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Correo"
+          },
+          "necesidad": {
+            "$ref": "#/components/schemas/Necesidad"
+          },
+          "tipo_espacio": {
+            "$ref": "#/components/schemas/TipoEspacio"
+          },
+          "mensaje": {
+            "type": "string",
+            "maxLength": 2000,
+            "title": "Mensaje",
+            "default": ""
+          },
+          "autorizacion_datos": {
+            "type": "boolean",
+            "title": "Autorizacion Datos"
+          },
+          "website": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Website",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "nombre",
+          "telefono",
+          "necesidad",
+          "tipo_espacio",
+          "autorizacion_datos"
+        ],
+        "title": "ContactoCreate"
+      },
+      "ContactoResponse": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "ok": {
+            "type": "boolean",
+            "title": "Ok",
+            "default": true
+          },
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "default": "Recibimos tu solicitud. Te contactaremos pronto."
+          }
+        },
+        "type": "object",
+        "title": "ContactoResponse"
       },
       "EquipoDetalle": {
         "properties": {
@@ -487,6 +614,27 @@
           "slug"
         ],
         "title": "MarcaOut"
+      },
+      "Necesidad": {
+        "type": "string",
+        "enum": [
+          "Mantenimiento",
+          "Reparación",
+          "Instalación",
+          "Compra de equipo",
+          "Refrigeración / cuarto frío"
+        ],
+        "title": "Necesidad"
+      },
+      "TipoEspacio": {
+        "type": "string",
+        "enum": [
+          "Residencial",
+          "Comercial",
+          "Industrial",
+          "Cuarto frío"
+        ],
+        "title": "TipoEspacio"
       },
       "ValidationError": {
         "properties": {

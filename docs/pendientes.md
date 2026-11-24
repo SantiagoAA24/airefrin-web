@@ -18,5 +18,5 @@ Marcadores visibles en el sitio que hay que confirmar con el cliente.
 - [ ] Historia de la empresa (quiénes somos) — texto pendiente del cliente.
 - [ ] Logos oficiales de las 8 marcas aliadas.
 - [ ] Mapa de cobertura (Bogotá, Cundinamarca y Meta).
-- [ ] Validación de la regla de la calculadora de BTU (600 BTU/m² + 15 % con mucho sol) — hoy es componente provisional.
+- [ ] Validación de la regla de la calculadora de BTU (600 BTU/m²; 2 personas incluidas; +600 BTU por persona extra; +1200 BTU por equipo de calor; +15 % con mucho sol; redondeo a 500 y match a 9/12/18/24/36/54 mil BTU).
 - [ ] Tuteo o usted en todo el sitio.

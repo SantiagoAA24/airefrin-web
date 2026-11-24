@@ -19,4 +19,18 @@ describe("Field", () => {
     expect(screen.getByLabelText("¿Qué necesitas?")).toBeInTheDocument();
     expect(screen.getByRole("option", { name: "Mantenimiento" })).toBeInTheDocument();
   });
+
+  it("renders a textarea when multiline", () => {
+    render(
+      <Field
+        id="mensaje"
+        label="Cuéntanos más"
+        placeholder="Equipo, ubicación…"
+        showLabel
+        multiline
+      />,
+    );
+    const field = screen.getByLabelText("Cuéntanos más");
+    expect(field.tagName).toBe("TEXTAREA");
+  });
 });

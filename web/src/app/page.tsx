@@ -9,7 +9,7 @@ import {
   SectorCard,
   StatItem,
 } from "@/components/ui";
-import { CapacityCalculatorPlaceholder } from "@/components/home/CapacityCalculatorPlaceholder";
+import { CapacityCalculator } from "@/components/home/CapacityCalculator";
 import { FeaturedEquipment } from "@/components/home/FeaturedEquipment";
 import { HomeFaq } from "@/components/home/HomeFaq";
 import { HomeHero } from "@/components/home/HomeHero";
@@ -164,7 +164,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <CapacityCalculatorPlaceholder />
+      <CapacityCalculator />
       <FeaturedEquipment equipos={featured.equipos} error={featured.error} />
 
       <section

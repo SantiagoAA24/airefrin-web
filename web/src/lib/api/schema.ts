@@ -72,6 +72,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/solicitudes/contacto": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Registrar solicitud de contacto */
+        post: operations["crear_contacto_solicitudes_contacto_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -84,6 +101,44 @@ export interface components {
             nombre: string;
             /** Slug */
             slug: string;
+        };
+        /** ContactoCreate */
+        ContactoCreate: {
+            /** Nombre */
+            nombre: string;
+            /** Telefono */
+            telefono: string;
+            /** Correo */
+            correo?: string | null;
+            necesidad: components["schemas"]["Necesidad"];
+            tipo_espacio: components["schemas"]["TipoEspacio"];
+            /**
+             * Mensaje
+             * @default
+             */
+            mensaje: string;
+            /** Autorizacion Datos */
+            autorizacion_datos: boolean;
+            /**
+             * Website
+             * @default
+             */
+            website: string;
+        };
+        /** ContactoResponse */
+        ContactoResponse: {
+            /** Id */
+            id?: number | null;
+            /**
+             * Ok
+             * @default true
+             */
+            ok: boolean;
+            /**
+             * Message
+             * @default Recibimos tu solicitud. Te contactaremos pronto.
+             */
+            message: string;
         };
         /** EquipoDetalle */
         EquipoDetalle: {
@@ -164,6 +219,16 @@ export interface components {
             /** Slug */
             slug: string;
         };
+        /**
+         * Necesidad
+         * @enum {string}
+         */
+        Necesidad: "Mantenimiento" | "Reparación" | "Instalación" | "Compra de equipo" | "Refrigeración / cuarto frío";
+        /**
+         * TipoEspacio
+         * @enum {string}
+         */
+        TipoEspacio: "Residencial" | "Comercial" | "Industrial" | "Cuarto frío";
         /** ValidationError */
         ValidationError: {
             /** Location */
@@ -297,6 +362,39 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["MarcaOut"][];
+                };
+            };
+        };
+    };
+    crear_contacto_solicitudes_contacto_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ContactoCreate"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ContactoResponse"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
         };

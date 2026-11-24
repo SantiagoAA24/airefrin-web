@@ -11,3 +11,8 @@ export {
   type ListEquiposParams,
   type Marca,
 } from "./catalogo";
+export {
+  submitContacto,
+  type ContactoCreate,
+  type ContactoResponse,
+} from "./solicitudes";

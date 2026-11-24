@@ -52,9 +52,12 @@ describe("Home", () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByText(
-        /\[Calculadora de capacidad · provisional · regla BTU por validar con el equipo técnico\]/,
-      ),
+      screen.getByRole("heading", {
+        name: /Qué equipo necesita su espacio/i,
+      }),
     ).toBeInTheDocument();
+
+    expect(screen.getByText(/Capacidad estimada/i)).toBeInTheDocument();
+    expect(screen.getByText(/Cotizar por WhatsApp/i)).toBeInTheDocument();
   });
 });

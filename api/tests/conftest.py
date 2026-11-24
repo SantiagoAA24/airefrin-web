@@ -11,6 +11,7 @@ from sqlalchemy.pool import StaticPool
 from app.catalogo.models import Categoria, Equipo, Marca
 from app.core.db import Base, get_db
 from app.main import app
+from app.solicitudes.models import Solicitud  # noqa: F401
 
 DESCRIPCION = "[Descripción corta del equipo, pendiente de confirmar con el cliente]"
 
